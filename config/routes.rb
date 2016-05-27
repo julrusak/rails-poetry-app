@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'sources_poems/new'
+
+  get 'magnet_poems/new'
+
+  get 'blackout_poems/new'
+
   devise_for :users, controllers: { sessions: 'users/sessions' }
   resources :blackout_poems
   resources :magnet_poems
