@@ -1,4 +1,4 @@
-;class User < ActiveRecord::Base
+class User < ActiveRecord::Base
 	has_many :blackout_poems
 	has_many :magnet_poems
   # Include default devise modules. Others available are:
