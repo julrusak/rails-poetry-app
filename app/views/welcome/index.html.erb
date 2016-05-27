@@ -1,5 +1,17 @@
 <h1>Poesy</h1>
+<h4>po·e·sy</h4>
+<h5>ˈpōəzē,-sē/</h5>
+<h6>noun archaic literary</h6>
+<h4>The art or composition of poetry.</h4>
+
 
 <p><%= link_to "Create Blackout Poem", new_blackout_poem_path %></p>
 <p><%= link_to "Create Magnet Poem", new_magnet_poem_path %></p>
 <p><%= link_to "Add Your Own Text Poem", new_source_path %></p>
+
+<% if !current_user %>
+	<p><%= link_to "Sign Up", new_user_registration_path %></p>
+	<p><%= link_to "Sign In", new_user_session_path %></p>
+<% else %>
+	<p><%= link_to "Sign Out", destroy_user_session_path %></p>
+<% end %>
