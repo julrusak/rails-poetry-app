@@ -1,2 +1,7 @@
-<div style="text-align:center;"><%= link_to "See all Sources", sources_path %></div>
-<%= @source.text %>
+<div style="text-align:center;"><%= link_to "See all Sources", sources_path %>&nbsp;&nbsp;<%= link_to "Add a Source", new_source_path %></div>
+
+<div id="text-box">
+	<% @source.each do |s| %>
+		<span><%= s %></span>
+	<% end %>
+</div>
