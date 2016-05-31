@@ -4,6 +4,6 @@ class BlackoutPoem < ActiveRecord::Base
 
   def self.prepare_text
   	source = Source.limit(1).order("RANDOM()").first
-  	return source.text.split(' ')
+  	return source
   end
 end

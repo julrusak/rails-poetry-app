@@ -1,0 +1,8 @@
+<% @blackout_poems.each do |b| %>
+	<%= b.title%><br />
+	<%= b.text%><br />
+	by <%= b.user.username %>
+	<% if b.user_id == current_user.id %>
+		<%= link_to 'Destroy',  blackout_poem_path(b),  method: :delete, data: { confirm: 'Are you sure?' } %><br /><br />
+	<% end %>
+<% end %>

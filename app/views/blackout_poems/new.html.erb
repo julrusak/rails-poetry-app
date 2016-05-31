@@ -1,7 +1,20 @@
 <div style="text-align:center;"><%= link_to "See all Sources", sources_path %>&nbsp;&nbsp;<%= link_to "Add a Source", new_source_path %></div>
 
-<div id="text-box">
-	<% @source.each do |s| %>
+<%= form_for(@blackout_poem) do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= content_tag :div, id: "text-box" do %>
+  <% @source.text.split(" ").each do |s| %>
 		<span><%= s %></span>
 	<% end %>
-</div>
+<% end %>
+	<%= f.text_field :text, id: "textarea" %>
+	<%= f.hidden_field :source_id, :value => @source.id %>
+	<div id="done" class="ghost-button">Done</div>
+	<div id="start-over" class="ghost-button">Start Over</div>
+	<%= f.submit "Submit", id: "submit", :class => 'ghost-button' %>
+<% end %>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
