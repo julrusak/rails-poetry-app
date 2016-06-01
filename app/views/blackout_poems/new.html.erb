@@ -8,7 +8,7 @@
 		<span><%= s %></span>
 	<% end %>
 <% end %>
-	<%= f.text_field :text, id: "textarea" %>
+	<%= f.hidden_field :text, id: "textarea" %>
 	<%= f.hidden_field :source_id, :value => @source.id %>
 	<div id="done" class="ghost-button">Done</div>
 	<div id="start-over" class="ghost-button">Start Over</div>
@@ -17,4 +17,4 @@
 
 <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
+<% end %>
