@@ -4,7 +4,7 @@ $( document ).ready(function(){
 		$(this).toggleClass("blackout");
 	})
 
-	$("#done").click(function() {
+	$("#done").click(function(){
 	  $("#text-box span.blackout").hide();
 	  $("#start-over").css('visibility', 'visible');
 	  $("#submit").css('visibility', 'visible');
