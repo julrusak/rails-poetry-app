@@ -1,22 +1,18 @@
 // Place all the styles related to the magnet_poems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$lightblue : #87e0fd;
-$darkblue : #2cafe3;
 
-.blackout {
-  background-color: black;
+
+.word {
+  display:inline-block;
+  background-color:#FFF;
+  font-family:Courier;
+  border:1px solid #000;
+  border-style:ridge;
+  padding:5px;
+  margin:5px
 }
-
-.ghost-button {
-  display: block;
-  width: 200px;
-  padding: 10px;
-  color: $darkblue;
-  border: 1px solid $lightblue;
-  text-align: center;
-  outline: none;
-  text-decoration: none;
-  visibility: hidden;
-  margin: auto;
+#content {
+  margin:auto;
+  padding-bottom:100px
 }

@@ -1,3 +1,22 @@
 // Place all the styles related to the blackout_poems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$lightblue : #87e0fd;
+$darkblue : #2cafe3;
+
+.blackout {
+  background-color: black;
+}
+
+.ghost-button {
+  display: block;
+  width: 200px;
+  padding: 10px;
+  color: $darkblue;
+  border: 1px solid $lightblue;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  visibility: hidden;
+  margin: auto;
+}
