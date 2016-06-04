@@ -19,15 +19,13 @@ $( document ).ready(function(){
 	    },
 	    drop:function(e,ui){
 	        var word = $("<div></div>").text( ui.draggable.text() ).text();
-	        console.log(word);
 	        // $( "<div></div>" ).text( ui.draggable.text() ).appendTo( this );
 	        addWord(word);
 	    }
 	});
-	var poem = {"words":[]};
+	var poem = [];
 	function addWord(text){
         poem.push(text);
-	    $('#cartcontent').datagrid('loadData', poem);
 	}    
 
 });
