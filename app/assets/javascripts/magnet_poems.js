@@ -11,20 +11,22 @@ $( document ).ready(function(){
 	});
 
 	$('#droppable').droppable({
-	    onDragEnter:function(e,source){
-	        $(source).draggable('options').cursor='auto';
+	    onDragEnter:function(e,ui){
+	        $(ui).draggable('options').cursor='auto';
 	    },
-	    onDragLeave:function(e,source){
-	        $(source).draggable('options').cursor='not-allowed';
+	    onDragLeave:function(e,ui){
+	        $(ui).draggable('options').cursor='not-allowed';
 	    },
-	    onDrop:function(e,source){
-	        var word = $(source).html();
+	    drop:function(e,ui){
+	        var word = $("<div></div>").text( ui.draggable.text() ).text();
+	        console.log(word);
+	        // $( "<div></div>" ).text( ui.draggable.text() ).appendTo( this );
 	        addWord(word);
 	    }
 	});
 	var poem = {"words":[]};
-	function addWord(name){
-        poem.push(word);
+	function addWord(text){
+        poem.push(text);
 	    $('#cartcontent').datagrid('loadData', poem);
 	}    
 
