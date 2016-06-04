@@ -1,4 +1,8 @@
 class MagnetPoemsController < ApplicationController
+  def index
+  	@magnet_poems = MagnetPoem.all
+  end
+
   def new
   	@magnet_poem = MagnetPoem.new
   end

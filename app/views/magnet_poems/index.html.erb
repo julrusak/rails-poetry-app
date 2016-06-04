@@ -1,1 +1,6 @@
 <H1>Make a poem!</H1>
+
+<% @magnet_poems.each do |poem| %>
+	<%= poem.title %><br />
+	<%= poem.text %><br />
+<% end %>
