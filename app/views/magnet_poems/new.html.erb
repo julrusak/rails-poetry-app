@@ -64,5 +64,9 @@
         <div class="draggable"> s </div>
       </div>
 
-      <input type="text">
       <div id="droppable"></div>
+      <%= form_for(@magnet_poem) do |f| %>
+      	<%= f.text_field :title %>
+      	<%= f.hidden_field :text, id: "magnetTextarea" %>
+	    <%= f.submit "Submit", id: "magnetSubmit" %>
+	<% end %>

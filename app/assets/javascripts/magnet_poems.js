@@ -25,7 +25,12 @@ $( document ).ready(function(){
 	});
 	var poem = [];
 	function addWord(text){
+		text = text.replace(/\s/g, '');
         poem.push(text);
 	}    
+	$("#magnetSubmit").click(function(){
+		var magnetPoem = poem.join(' ');
+		document.getElementById('magnetTextarea').value += magnetPoem;
+	});
 
 });
