@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :poems
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
   resources :magnet_poems
   resources :sources
