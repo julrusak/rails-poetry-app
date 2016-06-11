@@ -1,6 +1,7 @@
-<H1>Make a poem!</H1>
-
-<% @magnet_poems.each do |poem| %>
-	<%= poem.title %><br />
-	<%= poem.text %><br />
+<% @magnet_poems.each do |m| %>
+	<%= m.title %><br />
+	<%= m.text %>
+	<% if m.user_id == current_user.id %>
+		<%= link_to 'Destroy',  magnet_poem_path(m),  method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %><br /><br />
 <% end %>

@@ -16,6 +16,12 @@ class MagnetPoemsController < ApplicationController
      end
   end
 
+  def destroy
+    poem = MagnetPoem.find(params[:id])
+    poem.destroy
+    redirect_to magnet_poems_path
+  end
+
   private
   def magnet_poem_params
   	params.require(:magnet_poem).permit(:text, :title)

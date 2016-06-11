@@ -1,0 +1,20 @@
+<h1><%= @user.username %></h1>
+Member since <%= @user.created_at.strftime("%b %d, %Y") %><br />
+
+<h2>Blackout Poems</h2>
+<% @blackout_poems.each do |b| %>
+	<%= b.title %><br />
+	<%= b.text %><br /><br />
+<% end %>
+
+<h2>Magnet Poems</h2>
+<% @magnet_poems.each do |m| %>
+	<%= m.title || "Untitled" %><br />
+	<%= m.text %><br /><br />
+<% end %>
+
+<h2>Poems</h2>
+<% @poems.each do |p| %>
+	<%= p.title || "Untitled" %><br />
+	<%= p.text %><br /><br />
+<% end %>

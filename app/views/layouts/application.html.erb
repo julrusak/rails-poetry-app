@@ -17,7 +17,7 @@
 	<span style="width:30%;display:inline-block;">
 		<p><%= link_to "Create Blackout Poem", new_blackout_poem_path %></p>
 		<p><%= link_to "Create Magnet Poem", new_magnet_poem_path %></p>
-		<p><%= link_to "Add Your Own Text Poem", new_source_path %></p>
+		<p><%= link_to "Create Your Own Poem", new_poem_path %></p>
 	</span>
 
 	<span style="display:inline-block;float:right;"
@@ -25,7 +25,8 @@
 			<p><%= link_to "Sign Up", new_user_registration_path %></p>
 			<p><%= link_to "Sign In", new_user_session_path %></p>
 		<% else %>
-			<p><%= link_to "Sign Out", destroy_user_session_path %></p>
+			<p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></p>
+			<p><%= link_to "Profile", user_path(current_user.id) %></p>
 		<% end %>
 	</span>	
 </div>

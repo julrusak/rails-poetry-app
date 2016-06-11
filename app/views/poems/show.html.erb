@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @poem.user %>
+  <strong>Author:</strong>
+  <%= link_to @poem.user.username, user_path(@poem.user.id) %>
 </p>
 
 <%= link_to 'Edit', edit_poem_path(@poem) %> |

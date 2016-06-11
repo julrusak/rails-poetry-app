@@ -1,31 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Poems</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<h1>Poems</h1>
+ 
     <% @poems.each do |poem| %>
-      <tr>
-        <td><%= poem.title %></td>
-        <td><%= poem.text %></td>
-        <td><%= poem.user %></td>
-        <td><%= link_to 'Show', poem %></td>
-        <td><%= link_to 'Edit', edit_poem_path(poem) %></td>
-        <td><%= link_to 'Destroy', poem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+       <%= link_to poem.title, poem %><br />
+       <%= poem.text %><br />
+       by: <%= poem.user.username %><br />
+        <% if poem.user_id == current_user.id %>
+         <%= link_to 'Edit', edit_poem_path(poem) %>
+         <%= link_to 'Destroy', poem, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %><br />
     <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Poem', new_poem_path %>
+
